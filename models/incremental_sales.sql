@@ -16,10 +16,3 @@ SELECT
     END AS CATEGORY
 FROM DEV_DB_DBT.TEST_DATA.INCREMENTAL_SALES
 
-{% if is_incremental() %}
-
-WHERE SALE_ID NOT IN (
-    SELECT SALE_ID FROM {{ this }}
-)
-
-{% endif %}
