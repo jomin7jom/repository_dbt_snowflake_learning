@@ -1,0 +1,19 @@
+
+version: 2
+
+models:
+  - name: customer_sales
+    description: "Sales classification model"
+
+    columns:
+      - name: SALE_ID
+        data_tests:
+          - not_null
+          - unique
+
+      - name: CATEGORY
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['HIGH', 'LOW']
